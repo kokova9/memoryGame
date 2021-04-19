@@ -48,20 +48,22 @@ function createGameBoard() {
     let gridContainer = document.createElement('div');
     gridContainer.className = 'grid';
 
-    let item = document.createElement('div');
-    item.className = 'item';
+    
 
     for (let index = 0; index < 12; index++) {
+        let item = document.createElement('div');
+        item.className = 'item';
         let card = document.createElement('img');
         card.setAttribute('src','images/card_back.png');
         card.setAttribute('id',index);
         //card.setAttribute('onclick','flipcard()');
         card.addEventListener('click',flipcard);
         item.appendChild(card);
+        gridContainer.appendChild(item);
     }
     
 
-    gridContainer.appendChild(item);
+    
     gameboard.appendChild(gridContainer);
 
     cardArray.sort(() =>  0.5 - Math.random());
